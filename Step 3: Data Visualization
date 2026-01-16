@@ -1,0 +1,26 @@
+# 📊 Data Visualization
+
+###  Overview  
+Data visualization is the art and science of representing data graphically to make complex datasets more accessible, intuitive, and actionable. By leveraging charts, graphs, maps, and interactive visuals, analysts can uncover patterns, trends, and anomalies that may be hidden in raw data. In this inflation analysis project, Power BI serves as the visualization engine to transform economic indicators into meaningful insights for decision-makers.
+
+---
+
+### Visualization Activities
+
+| Activity | Description |
+|---------|-------------|
+| **Average Inflation Rate** | Displays the overall average inflation rate across all countries and years, offering a benchmark for comparison. |
+| **Maximum Inflation Rate** | Highlights the highest recorded inflation rate in the dataset, useful for identifying extreme economic conditions. |
+| **Total Number of Regions** | Shows the count of distinct global regions represented in the dataset, aiding in geographic segmentation. |
+| **Inflation Rate Change Over a Year** | Visualizes year-over-year changes in inflation rates using DAX measures to track economic shifts. |
+| **Distribution of Inflation Rate Categories** | Uses bar and pie charts to show how inflation rates are categorized into High, Medium, and Low, revealing prevalence and impact. |
+| **Filter Applied on Country Column** | Enables users to dynamically filter visuals by country, allowing focused analysis on specific national trends. |
+| **Average Inflation Rate Change by Country** | Compares average inflation rate changes across countries, helping identify regions with volatile or stable inflation. |
+| **Inflation Rate and Adjusted Inflation Rate Over Years** | A scatter plot shows the relationship between raw and adjusted inflation rates over time, supporting trend analysis. |
+| **Count of Region by Country** | A world map visual categorizes countries by region, enhancing geographic context and regional comparisons. |
+| **Inflation Rate Distribution** | A line chart tracks the sum of inflation rates over time, highlighting historical peaks and troughs. |
+| **Top 3 Inflation Rate Countries** | A donut chart ranks the top three countries with the highest cumulative inflation rates, spotlighting economic hotspots. |
+
+
+
+<img width="1164" height="653" alt="Screenshot 2026-01-16 140104" src="https://github.com/user-attachments/assets/3c1b2f67-f9c6-45f1-af15-723690cf63d8" />
