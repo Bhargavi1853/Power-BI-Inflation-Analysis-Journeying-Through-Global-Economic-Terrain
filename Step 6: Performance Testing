@@ -1,0 +1,62 @@
+#  Performance Testing
+
+###  Overview  
+Performance testing is a vital phase in the development and deployment of data-driven applications. It evaluates the speed, responsiveness, and stability of a system under varying conditions—such as high data volumes, complex calculations, and concurrent user interactions. In Power BI, performance testing ensures that dashboards and reports remain efficient, interactive, and scalable, even as data grows or user demand increases.
+
+---
+
+###  Key Performance Metrics
+
+#### 1. **Amount of Data Loaded**
+- The dataset includes inflation data across multiple countries, regions, and years.
+- Data volume impacts load time, refresh cycles, and visual responsiveness.
+- Efficient use of Power Query transformations and incremental refresh strategies helps optimize performance.
+  
+<img width="220" height="469" alt="Screenshot 2026-01-16 182711" src="https://github.com/user-attachments/assets/dfe9b0d1-41c9-40fc-94d7-18fb9472a97a" />
+
+
+#### 2. **Utilization of Filters**
+- Filters are applied on key dimensions such as:
+  - `Country_name`
+  - `Region`
+  - `Year`
+  - `InflationRateCategory`
+- These filters enable targeted analysis and reduce rendering time by narrowing the data scope.
+- Slicers and dropdowns are used for intuitive user interaction.
+
+<img width="1155" height="654" alt="Screenshot 2026-01-16 183017" src="https://github.com/user-attachments/assets/905f513d-d698-46f2-a7ca-e0f8ccbb3031" />
+<img width="1157" height="655" alt="Screenshot 2026-01-16 182929" src="https://github.com/user-attachments/assets/53e3d541-2e70-41ae-a63a-30e9b65150cc" />
+
+
+#### 3. **Number of Calculation Fields**
+- **Conditional Columns**:
+  - `InflationRateCategory`: Categorizes inflation as High, Medium, or Low.
+  - `AdjustedInflationRate`: Converts raw inflation rate to decimal format.
+- **Measures**:
+  - `InflationRateChange`: Calculates year-over-year inflation change.
+  - `AverageInflationRate`, `MaxInflationRate`, `RegionCount`: Summarize key metrics.
+- These DAX-based calculations enhance analytical depth while maintaining performance through optimized logic.
+  
+<img width="1166" height="32" alt="Screenshot 2026-01-16 170954" src="https://github.com/user-attachments/assets/8afcdaae-774b-40dc-ab4c-f5b091d8d6c1" />
+<img width="1154" height="455" alt="Screenshot 2026-01-16 170823" src="https://github.com/user-attachments/assets/00d5e10c-842a-4058-9223-14421364c439" />
+
+
+#### 4. **Number of Visualizations / Graphs**
+
+The Power BI report includes a diverse set of visuals to support comprehensive inflation analysis:
+
+| Visualization Title | Purpose |
+|---------------------|---------|
+| Average Inflation Rate of All Countries | Benchmarking global inflation |
+| Maximum Inflation Rate | Identifying peak inflation scenarios |
+| Number of Regions | Geographic coverage summary |
+| Inflation Rate Change Over Years | Trend analysis and forecasting |
+| Distribution of Inflation Rate Category | Risk segmentation |
+| Filter Applied on Country Column | Country-specific drill-down |
+| Average Inflation Rate Change by Country | Comparative volatility analysis |
+| Inflation and Adjusted Inflation Rate Over Years | Correlation and normalization |
+| Inflation Rate Distribution | Historical inflation spread |
+| Inflation Rate Distribution by Region and Country | Regional impact mapping |
+| Top 3 Inflation Rate Countries | Highlighting economic hotspots |
+
+<img width="1164" height="653" alt="Screenshot 2026-01-16 140104" src="https://github.com/user-attachments/assets/e8d2a791-caf6-4f41-88b9-40b921dc0945" />
