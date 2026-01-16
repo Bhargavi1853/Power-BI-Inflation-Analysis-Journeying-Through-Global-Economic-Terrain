@@ -19,14 +19,8 @@ Data preparation is a foundational step in the analytical lifecycle, ensuring th
   ```
 - Created categorized inflation buckets using:
   ```DAX
-  InflationRateCategory =
-  SWITCH(
-      TRUE(),
-      'global_inflation_data'[InflationRate] >= 10, "High",
-      'global_inflation_data'[InflationRate] >= 5, "Medium",
-      'global_inflation_data'[InflationRate] < 5, "Low",
-      BLANK()
-  )
+  InflationRateCategory = IF(global_inflation_data[InflationRate]<2,"Low",IF(global_inflation_data[InflationRate]<=5,"Moderate","High"))
+
   ```
 - These transformations support segmentation, filtering, and comparative analysis across countries and regions.
 
