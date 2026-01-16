@@ -1,0 +1,40 @@
+# Data Preparation  
+
+###  Importance of Data Preparation  
+Data preparation is a critical stage in the data analysis lifecycle. It ensures that raw data is transformed into a structured, reliable, and analysis‑ready format. By addressing missing values, outliers, inconsistencies, and inaccuracies, this stage safeguards the integrity of insights derived from the dataset. High‑quality data preparation directly impacts the accuracy of models, the clarity of visualizations, and the confidence of decision‑makers.  
+
+---
+
+###  Key Activities in Data Preparation  
+1. **Data Cleaning**  
+   - Remove irrelevant records and duplicates.  
+   - Handle missing values through imputation or exclusion.  
+   - Correct inconsistencies in country names, regions, and year formats.  
+
+2. **Data Transformation**  
+   - Convert inflation rates into standardized units.  
+   - Create derived fields such as *AdjustedInflationRate* (Inflation Rate × 0.01).  
+   - Categorize inflation rates into *High*, *Medium*, or *Low* using predefined thresholds.  
+
+3. **Data Organization**  
+   - Structure the dataset into logical tables with clear relationships.  
+   - Ensure consistent column naming conventions for easier integration.  
+   - Apply indexing for faster querying and filtering.  
+
+4. **Data Validation**  
+   - Verify accuracy of inflation values against trusted sources.  
+   - Check categorical assignments for correctness.  
+   - Run outlier detection to flag abnormal inflation spikes.  
+
+---
+
+# Preparing the Data for Visualization  
+
+###  Steps for Visualization Readiness  
+- **Cleaning**: Ensure no missing or irrelevant entries remain.  
+- **Transformation**: Convert data into formats suitable for Power BI visuals (e.g., numeric, categorical).  
+- **Exploration**: Identify patterns, trends, and anomalies in inflation rates across countries and regions.  
+- **Filtering**: Focus on subsets of data such as specific regions, years, or inflation categories.  
+- **Integration**: Load the prepared dataset into Power BI using Power Query.  
+- **Validation**: Confirm accuracy and completeness before building dashboards.  
+
