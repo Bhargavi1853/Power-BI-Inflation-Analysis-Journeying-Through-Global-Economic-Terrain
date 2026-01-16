@@ -1,5 +1,6 @@
 ## Technical Architecture for Global Inflation Analysis in Power BI
 
+
 ### 1. **Data Sources & Ingestion**
 - **Sources**:
   - Government portals (e.g., World Bank, IMF, national statistics bureaus)
