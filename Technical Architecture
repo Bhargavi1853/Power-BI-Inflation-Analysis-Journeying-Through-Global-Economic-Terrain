@@ -1,0 +1,70 @@
+## Technical Architecture for Global Inflation Analysis in Power BI
+
+### 1. **Data Sources & Ingestion**
+- **Sources**:
+  - Government portals (e.g., World Bank, IMF, national statistics bureaus)
+  - Financial APIs (e.g., OECD, Quandl, FRED)
+  - Internal ERP/CRM systems for regional pricing and cost data
+  - Cloud storage (Google Drive, Azure Blob, SharePoint)
+
+- **Tools**:
+  - Power Query for ETL
+  - Dataflows for centralized ingestion and transformation
+  - Scheduled refresh via gateway for on-premise sources
+
+---
+
+### 2. **Data Integration & Standardization**
+- **Challenges Addressed**: Scenario 1 – inconsistent formats across regions
+
+- **Solutions**:
+  - Create a **global inflation schema** with standardized fields (e.g., Country, CPI, PPI, Date, Source)
+  - Use **custom functions in Power Query** to normalize units, currencies, and date formats
+  - Implement **data quality checks** (null handling, outlier detection)
+
+---
+
+### 3. **Historical Data Management**
+- **Challenges Addressed**: Scenario 2 – limited historical data
+
+- **Solutions**:
+  - Build a **historical inflation warehouse** using Azure SQL or Dataverse
+  - Use incremental refresh in Power BI for large time-series datasets
+  - Integrate external historical datasets via APIs and CSV imports
+
+---
+
+### 4. **Economic Modeling & Interdependencies**
+- **Challenges Addressed**: Scenario 3 – complex global relationships
+
+- **Solutions**:
+  - Use **DAX measures** to calculate inflation correlations across countries
+  - Implement **time intelligence** for YoY, MoM, and rolling averages
+  - Create **economic dependency matrices** using Power BI matrix visuals
+  - Integrate **AI insights** via Azure Machine Learning for predictive modeling
+
+---
+
+### 5. **Visualization & Dashboard Design**
+- **Features**:
+  - Interactive map showing inflation by country
+  - Trend lines with slicers for region, time, and inflation type
+  - KPI cards for inflation thresholds and risk alerts
+  - Drill-through pages for country-specific analysis
+  - Bookmarks for scenario comparisons
+
+---
+
+### 6. **User Interaction & Feedback Loop**
+- **Workflow**:
+  - Users analyze dashboards → make decisions → input feedback via forms or apps
+  - Feedback captured in Power Apps or Excel → pushed to Power BI via Power Automate
+  - Enables a **closed-loop system** for continuous improvement
+
+---
+
+### 7. **Security & Governance**
+- Role-level security for regional analysts
+- Audit logs and data lineage tracking
+- Compliance with GDPR and local data regulations
+
