@@ -1,0 +1,84 @@
+#  Data Preparation
+
+###  Importance of Data Preparation  
+Data preparation is a foundational step in the analytical lifecycle, ensuring that raw data is transformed into a structured, reliable, and analysis-ready format. It involves cleaning, transforming, organizing, and validating data to eliminate inconsistencies, inaccuracies, and gaps. This process is essential for maintaining the integrity of insights, enhancing model accuracy, and enabling confident decision-making across business functions.
+
+---
+
+###  Key Activities in Data Preparation  
+
+#### 1. **Data Cleaning**
+- Removed irrelevant records and duplicates.
+- Handled missing values through imputation or exclusion.
+- Corrected inconsistencies in country names, region labels, and year formats.
+
+#### 2. **Data Transformation**
+- Converted inflation rates into standardized decimal format using:
+  ```DAX
+  AdjustedInflationRate = 'global_inflation_data'[InflationRate] * 0.01
+  ```
+- Created categorized inflation buckets using:
+  ```DAX
+  InflationRateCategory =
+  SWITCH(
+      TRUE(),
+      'global_inflation_data'[InflationRate] >= 10, "High",
+      'global_inflation_data'[InflationRate] >= 5, "Medium",
+      'global_inflation_data'[InflationRate] < 5, "Low",
+      BLANK()
+  )
+  ```
+- These transformations support segmentation, filtering, and comparative analysis across countries and regions.
+
+#### 3. **Data Organization**
+- Structured the dataset into logical tables with clear relationships.
+- Applied consistent column naming conventions for seamless integration.
+- Indexed key fields to optimize performance during querying and filtering.
+
+#### 4. **Data Validation**
+- Verified inflation values against trusted external sources.
+- Checked categorical assignments for logical consistency.
+- Detected and flagged outliers to ensure analytical robustness.
+
+---
+
+#  Preparing the Data for Visualization
+
+### Steps for Visualization Readiness
+- **Cleaning**: Ensured no missing or irrelevant entries remain.
+- **Transformation**: Converted data into numeric and categorical formats suitable for Power BI visuals.
+- **Exploration**: Identified patterns, trends, and anomalies in inflation rates across countries and years.
+- **Filtering**: Enabled dynamic filtering by region, year, and inflation category.
+- **Integration**: Loaded the prepared dataset into Power BI using Power Query.
+- **Validation**: Confirmed accuracy and completeness before dashboard development.
+
+---
+##  Advanced DAX Measures for Insight
+
+###  Inflation Rate Change (YoY)
+Calculates the percentage change in inflation rate between the current year and the previous year:
+```DAX
+InflationRateChange =
+VAR CurrentYear = MAX('global_inflation_data'[Year])
+VAR CurrentInflationRate =
+    CALCULATE(
+        MAX('global_inflation_data'[InflationRate]),
+        ALL('global_inflation_data'),
+        'global_inflation_data'[Year] = FORMAT(CurrentYear, "0")
+    )
+VAR PreviousInflationRate =
+    CALCULATE(
+        MAX('global_inflation_data'[InflationRate]),
+        ALL('global_inflation_data'),
+        'global_inflation_data'[Year] = FORMAT(CurrentYear - 1, "0")
+    )
+RETURN
+IF(
+    ISBLANK(PreviousInflationRate),
+    BLANK(),
+    (CurrentInflationRate - PreviousInflationRate) / PreviousInflationRate
+)
+```
+
+<img width="1166" height="32" alt="Screenshot 2026-01-16 170954" src="https://github.com/user-attachments/assets/18d7ce34-08d7-4f45-885d-77c14c45858d" />
+<img width="1154" height="455" alt="Screenshot 2026-01-16 170823" src="https://github.com/user-attachments/assets/1f206c95-324a-4bfe-b463-c218dd22337c" />
