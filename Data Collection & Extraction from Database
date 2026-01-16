@@ -1,0 +1,44 @@
+# Data Collection & Extraction from Database  
+
+###  Overview  
+Data collection is the systematic process of gathering and measuring information on variables of interest. In the context of inflation analysis, this process ensures that analysts can answer research questions, test hypotheses, evaluate outcomes, and generate actionable insights. A well‑defined data collection and extraction framework is essential to maintain consistency, reliability, and accuracy across diverse sources.  
+
+---
+
+###  Dataset Access  
+The dataset can be downloaded using the provided link: **link**.  
+It contains inflation data across multiple countries and regions, structured in CSV format.  
+
+---
+
+###  Activity 1.1: Understand the Data  
+The dataset includes meta information describing each column. Below is the column description:  
+
+| Column Name             | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **Country_name**         | Name of the country                                                        |
+| **Inflation Rate**       | Inflation rate of each country                                             |
+| **Region**               | Region to which the country belongs                                        |
+| **Year**                 | Calendar year for which the inflation data is recorded                     |
+| **AdjustedInflationRate**| Derived by multiplying the inflation rate by 0.01                          |
+| **InflationRateCategory**| Categorization of inflation rate as *high*, *medium*, or *low* based on thresholds |
+
+---
+
+###  Extraction Process  
+1. **Import Data**  
+   - Use Power Query in Power BI to connect to the CSV file.  
+   - Apply transformations to ensure consistent formatting (e.g., date parsing, numeric conversions).  
+
+2. **Data Validation**  
+   - Check for missing values in *Inflation Rate* and *Year*.  
+   - Validate categorical assignments in *InflationRateCategory*.  
+
+3. **Standardization**  
+   - Ensure country names and regions follow a consistent naming convention.  
+   - Normalize inflation rates to comparable units across datasets.  
+
+4. **Storage & Refresh**  
+   - Store cleaned data in a centralized repository (Azure SQL or Dataverse).  
+   - Enable scheduled refresh in Power BI for updated datasets.  
+
